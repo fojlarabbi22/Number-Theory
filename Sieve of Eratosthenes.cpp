@@ -8,18 +8,19 @@ using namespace std;
 
 const int N = 2e5 + 10;
 vector<int> prime;
+bitset<N + 1> b(0); // Both fast and memory efficient 
 void sieve() {
-    vector<int> p(N + 1, 0); // Use bool for less space (1 byte each)
-    for(ll i = 2; i*i <= N; i++) {
-        if(p[i] != 1) {
-            for(ll j = i*i; j <= N; j += i) {
-                p[j] = 1;
+    for(int i = 2; i*i <= N; i++) {
+        if(b[i] != 1) {
+            for(int j = i*i; j <= N; j += i) {
+                b[j] = 1;
             }
         }
     }
     for(int i = 2; i <= N; i++) {
-        if(p[i] != 1) prime.push_back(i);
+        if(b[i] != 1) prime.push_back(i);
     }
+
 }
 
 int main() {
