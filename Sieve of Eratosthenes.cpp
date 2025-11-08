@@ -9,7 +9,7 @@ using namespace std;
 const int N = 2e5 + 10;
 vector<int> prime;
 void sieve() {
-    vector<int> p(N + 1, 0);
+    vector<int> p(N + 1, 0); // Use bool for less space (1 byte each)
     for(ll i = 2; i*i <= N; i++) {
         if(p[i] != 1) {
             for(ll j = i*i; j <= N; j += i) {
