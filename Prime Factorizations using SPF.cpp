@@ -18,6 +18,7 @@ void pre_spf() {
     }
 
 }
+
 void prime_fact(int n) {
     vector<int> v;
     while(n > 1) { // Approximately less than O(log n)
@@ -28,6 +29,7 @@ void prime_fact(int n) {
     cout << '\n';
     
 }
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
